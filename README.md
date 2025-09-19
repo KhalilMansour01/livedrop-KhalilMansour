@@ -1,11 +1,15 @@
 # Live Drops System Design
 
-## Diagram
-View the system architecture diagram on [Excalidraw](https://excalidraw.com/#json=0DBMYh5jCs1Wxf_eXw8n0,XKt7kgeDZyj9T3NUq8BOjw).
+## Diagrams & Sketches
+All key visual artifacts for this project are available in a single Excalidraw link:  
+- **Architecture Diagram**  
+- **Data Model Sketches**  
+- **API Contract Outline**  
 
-This repository contains the system design for **Live Drops**, a flash-sale platform where creators can run limited-inventory product drops and users can follow creators to receive real-time updates.
+View them here: [Excalidraw - Live Drops](https://excalidraw.com/#json=0DBMYh5jCs1Wxf_eXw8n0,XKt7kgeDZyj9T3NUq8BOjw).
 
-The system uses a **microservices architecture** to ensure scalability, reliability, and low latency. Redis Cache is emphasized as the core component for real-time operations, inventory management, and preventing overselling.
+This project designs **Live Drops**, a flash-sale platform where creators run limited-inventory drops and users get real-time updates.  
+It uses a **microservices architecture** for scalability, reliability, and low latency, with Redis as the core component for real-time operations and inventory management.
 
 ---
 
