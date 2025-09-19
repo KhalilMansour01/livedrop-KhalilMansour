@@ -117,6 +117,6 @@ The system follows a layered microservices approach:
 | Emphasis on Redis | Redis handles real-time updates, inventory consistency, high throughput | May give impression SQL/NoSQL are less important; mitigated by explanations |
 | Polyglot Persistence | Right tool for each job: PostgreSQL, Cassandra, Elasticsearch, Redis | Increases operational complexity; requires multi-tech expertise |
 | Redis-based Inventory | Prevents overselling under high concurrency | Potential consistency gap if Redis fails before DB update; mitigated with reconciliation jobs |
-| Client-managed Idempotency Keys | Simplifies server logic | Client must correctly generate unique IDs |
+| Client-managed Idempotency Keys | Simplifies server logic | Client developers must correctly generate unique IDs |
 | Event-driven Architecture (Kafka) | Decouples services, ensures reliability | Adds complexity and potential failure points |
 | WebSockets for Real-time Updates | Low-latency communication for “flash sale” feel | More complex connection management |
