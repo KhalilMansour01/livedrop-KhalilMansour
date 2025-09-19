@@ -1,10 +1,7 @@
 # Live Drops System Design
 
 ## Diagram
-View the system architecture diagram on [Excalidraw](https://excalidraw.com/#json=YOUR_DIAGRAM_ID_HERE).
-
-![Architecture Diagram](https://github.com/yourusername/livedrop-yourname/raw/main/architecture.png)  
-*Click the image to view a high-resolution version.*
+View the system architecture diagram on [Excalidraw]([https://excalidraw.com/#json=YOUR_DIAGRAM_ID_HERE](https://excalidraw.com/#json=0DBMYh5jCs1Wxf_eXw8n0,XKt7kgeDZyj9T3NUq8BOjw)).
 
 This repository contains the system design for **Live Drops**, a flash-sale platform where creators can run limited-inventory product drops and users can follow creators to receive real-time updates.
 
