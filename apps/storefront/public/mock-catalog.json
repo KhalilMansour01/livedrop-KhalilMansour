@@ -1,0 +1,200 @@
+[
+  {
+    "id": "prod-001",
+    "title": "Wireless Bluetooth Headphones",
+    "price": 7999,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+    "tags": ["electronics", "audio", "wireless", "bluetooth"],
+    "stockQty": 15,
+    "description": "High-quality wireless headphones with noise cancellation and 30-hour battery life."
+  },
+  {
+    "id": "prod-002",
+    "title": "Organic Cotton T-Shirt",
+    "price": 2499,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+    "tags": ["clothing", "organic", "casual", "cotton"],
+    "stockQty": 8,
+    "description": "Comfortable organic cotton t-shirt available in multiple colors."
+  },
+  {
+    "id": "prod-003",
+    "title": "Stainless Steel Water Bottle",
+    "price": 3499,
+    "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400",
+    "tags": ["kitchen", "eco-friendly", "hydration", "steel"],
+    "stockQty": 25,
+    "description": "Keep your drinks cold for 24 hours or hot for 12 hours with this insulated bottle."
+  },
+  {
+    "id": "prod-004",
+    "title": "Smart Fitness Watch",
+    "price": 19999,
+    "image": "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=400",
+    "tags": ["electronics", "fitness", "smart", "wearable"],
+    "stockQty": 12,
+    "description": "Track your heart rate, sleep, and workouts with this advanced fitness watch."
+  },
+  {
+    "id": "prod-005",
+    "title": "Ceramic Coffee Mug",
+    "price": 1599,
+    "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400",
+    "tags": ["kitchen", "ceramic", "coffee", "home"],
+    "stockQty": 30,
+    "description": "Beautiful handmade ceramic mug perfect for your morning coffee."
+  },
+  {
+    "id": "prod-006",
+    "title": "Laptop Backpack",
+    "price": 5999,
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400",
+    "tags": ["accessories", "travel", "laptop", "bags"],
+    "stockQty": 10,
+    "description": "Durable backpack with laptop compartment and multiple pockets."
+  },
+  {
+    "id": "prod-007",
+    "title": "Yoga Mat Premium",
+    "price": 4499,
+    "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400",
+    "tags": ["fitness", "yoga", "exercise", "eco-friendly"],
+    "stockQty": 18,
+    "description": "Non-slip yoga mat with excellent cushioning for all types of yoga."
+  },
+  {
+    "id": "prod-008",
+    "title": "Wireless Phone Charger",
+    "price": 2999,
+    "image": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=400",
+    "tags": ["electronics", "charging", "wireless", "accessories"],
+    "stockQty": 22,
+    "description": "Fast wireless charging pad compatible with all Qi-enabled devices."
+  },
+  {
+    "id": "prod-009",
+    "title": "Desk Lamp LED",
+    "price": 3999,
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400",
+    "tags": ["home", "office", "lighting", "led"],
+    "stockQty": 14,
+    "description": "Adjustable LED desk lamp with multiple brightness settings."
+  },
+  {
+    "id": "prod-010",
+    "title": "Portable Bluetooth Speaker",
+    "price": 8999,
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400",
+    "tags": ["electronics", "audio", "portable", "bluetooth"],
+    "stockQty": 7,
+    "description": "Waterproof Bluetooth speaker with impressive sound quality."
+  },
+  {
+    "id": "prod-011",
+    "title": "Running Shoes",
+    "price": 12999,
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+    "tags": ["clothing", "fitness", "running", "shoes"],
+    "stockQty": 20,
+    "description": "Lightweight running shoes with excellent cushioning and support."
+  },
+  {
+    "id": "prod-012",
+    "title": "Glass Food Containers Set",
+    "price": 3499,
+    "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400",
+    "tags": ["kitchen", "storage", "glass", "eco-friendly"],
+    "stockQty": 16,
+    "description": "Set of 5 glass food containers with airtight lids."
+  },
+  {
+    "id": "prod-013",
+    "title": "Mechanical Keyboard",
+    "price": 8999,
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400",
+    "tags": ["electronics", "gaming", "keyboard", "mechanical"],
+    "stockQty": 9,
+    "description": "RGB mechanical keyboard with customizable keys and responsive switches."
+  },
+  {
+    "id": "prod-014",
+    "title": "Wooden Cutting Board",
+    "price": 2999,
+    "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400",
+    "tags": ["kitchen", "wood", "cooking", "home"],
+    "stockQty": 25,
+    "description": "Durable bamboo cutting board perfect for all your kitchen needs."
+  },
+  {
+    "id": "prod-015",
+    "title": "Fitness Resistance Bands",
+    "price": 1999,
+    "image": "https://images.unsplash.com/photo-1536922246289-88c42f957773?w=400",
+    "tags": ["fitness", "exercise", "resistance", "home-workout"],
+    "stockQty": 35,
+    "description": "Set of 5 resistance bands for full-body workouts at home or gym."
+  },
+  {
+    "id": "prod-016",
+    "title": "Wool Winter Beanie",
+    "price": 1799,
+    "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=400",
+    "tags": ["clothing", "winter", "accessories", "wool"],
+    "stockQty": 28,
+    "description": "Warm wool beanie to keep you comfortable in cold weather."
+  },
+  {
+    "id": "prod-017",
+    "title": "Phone Case Protective",
+    "price": 1499,
+    "image": "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400",
+    "tags": ["electronics", "accessories", "protection", "phone"],
+    "stockQty": 40,
+    "description": "Shock-absorbent phone case with raised edges for screen protection."
+  },
+  {
+    "id": "prod-018",
+    "title": "Essential Oil Diffuser",
+    "price": 3999,
+    "image": "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=400",
+    "tags": ["home", "wellness", "aromatherapy", "decor"],
+    "stockQty": 11,
+    "description": "Ultrasonic essential oil diffuser with color-changing LED lights."
+  },
+  {
+    "id": "prod-019",
+    "title": "Stainless Steel Cookware Set",
+    "price": 24999,
+    "image": "https://images.unsplash.com/photo-1556909114-4d0d853e5e25?w=400",
+    "tags": ["kitchen", "cooking", "steel", "premium"],
+    "stockQty": 5,
+    "description": "10-piece stainless steel cookware set for professional cooking."
+  },
+  {
+    "id": "prod-020",
+    "title": "Gaming Mouse",
+    "price": 5999,
+    "image": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400",
+    "tags": ["electronics", "gaming", "mouse", "precision"],
+    "stockQty": 17,
+    "description": "High-precision gaming mouse with customizable DPI and RGB lighting."
+  },
+  {
+    "id": "prod-021",
+    "title": "Noise Cancelling Earbuds",
+    "price": 12999,
+    "image": "https://images.unsplash.com/photo-1590658165737-15a047b8b5e5?w=400",
+    "tags": ["electronics", "audio", "wireless", "noise-cancelling"],
+    "stockQty": 13,
+    "description": "True wireless earbuds with active noise cancellation and 8-hour battery."
+  },
+  {
+    "id": "prod-022",
+    "title": "Leather Wallet",
+    "price": 4999,
+    "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=400",
+    "tags": ["accessories", "leather", "fashion", "wallet"],
+    "stockQty": 24,
+    "description": "Genuine leather wallet with multiple card slots and cash compartment."
+  }
+]

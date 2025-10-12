@@ -1,0 +1,122 @@
+[
+  {
+    "qid": "Q01",
+    "category": "Returns",
+    "question": "What is your return policy?",
+    "answer": "We accept returns within 30 days of purchase. Items must be in original condition with tags attached."
+  },
+  {
+    "qid": "Q02",
+    "category": "Returns",
+    "question": "How long do I have to return an item?",
+    "answer": "You have 30 days from the delivery date to return most items for a full refund."
+  },
+  {
+    "qid": "Q03",
+    "category": "Shipping",
+    "question": "What shipping options do you offer?",
+    "answer": "We offer standard shipping (5-7 business days) and express shipping (2-3 business days)."
+  },
+  {
+    "qid": "Q04",
+    "category": "Shipping",
+    "question": "How much does shipping cost?",
+    "answer": "Standard shipping is free on orders over $50. Express shipping costs $9.99."
+  },
+  {
+    "qid": "Q05",
+    "category": "Shipping",
+    "question": "Do you ship internationally?",
+    "answer": "Currently, we only ship within the United States."
+  },
+  {
+    "qid": "Q06",
+    "category": "Payment",
+    "question": "What payment methods do you accept?",
+    "answer": "We accept Visa, MasterCard, American Express, PayPal, and Apple Pay."
+  },
+  {
+    "qid": "Q07",
+    "category": "Payment",
+    "question": "Is my payment information secure?",
+    "answer": "Yes, we use industry-standard SSL encryption to protect your payment information."
+  },
+  {
+    "qid": "Q08",
+    "category": "Products",
+    "question": "Are your products authentic?",
+    "answer": "Yes, we only sell 100% authentic products from authorized suppliers."
+  },
+  {
+    "qid": "Q09",
+    "category": "Products",
+    "question": "Do you offer warranties?",
+    "answer": "Most electronics come with a 1-year manufacturer warranty. Check individual product pages for details."
+  },
+  {
+    "qid": "Q10",
+    "category": "Account",
+    "question": "How do I create an account?",
+    "answer": "You can create an account during checkout or by clicking 'Sign Up' in the top navigation."
+  },
+  {
+    "qid": "Q11",
+    "category": "Account",
+    "question": "I forgot my password, what should I do?",
+    "answer": "Click 'Forgot Password' on the login page and follow the instructions to reset your password."
+  },
+  {
+    "qid": "Q12",
+    "category": "Orders",
+    "question": "How can I track my order?",
+    "answer": "You can track your order using the tracking link in your shipping confirmation email."
+  },
+  {
+    "qid": "Q13",
+    "category": "Orders",
+    "question": "Can I cancel my order?",
+    "answer": "Orders can be cancelled within 1 hour of placement. After that, they enter processing and cannot be cancelled."
+  },
+  {
+    "qid": "Q14",
+    "category": "Orders",
+    "question": "How do I change my order?",
+    "answer": "Contact customer support immediately if you need to modify your order. Changes are only possible before shipment."
+  },
+  {
+    "qid": "Q15",
+    "category": "Support",
+    "question": "How do I contact customer service?",
+    "answer": "You can reach us at support@storefront.com or call 1-800-STORE123 during business hours."
+  },
+  {
+    "qid": "Q16",
+    "category": "Support",
+    "question": "What are your customer service hours?",
+    "answer": "Our customer service team is available Monday-Friday, 9 AM to 6 PM EST."
+  },
+  {
+    "qid": "Q17",
+    "category": "Pricing",
+    "question": "Do you offer price matching?",
+    "answer": "Yes, we offer price matching within 7 days of purchase if you find the same item for less at an authorized retailer."
+  },
+  {
+    "qid": "Q18",
+    "category": "Pricing",
+    "question": "Are there any hidden fees?",
+    "answer": "No hidden fees. The price you see at checkout is the final price, including tax and shipping if applicable."
+  },
+  {
+    "qid": "Q19",
+    "category": "Privacy",
+    "question": "How do you protect my privacy?",
+    "answer": "We never sell your personal information and only use it to process your orders and improve your shopping experience."
+  },
+  {
+    "qid": "Q20",
+    "category": "General",
+    "question": "Where are you located?",
+    "answer": "Our company is based in San Francisco, California, but we ship from multiple warehouses across the US."
+  }
+]
