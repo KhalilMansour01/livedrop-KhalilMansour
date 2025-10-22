@@ -5,6 +5,7 @@ import Product from '../pages/product';
 import Cart from '../pages/cart';
 import Checkout from '../pages/checkout';
 import OrderStatus from '../pages/order-status';
+import AdminDashboard from '../pages/AdminDashboard';
 
 export const AppRouter: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ export const AppRouter: React.FC = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/order/:id" element={<OrderStatus />} />
+      <Route path="/admin" element={<AdminDashboard />} />
     </Routes>
   );
 };

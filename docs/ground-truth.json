@@ -1,0 +1,107 @@
+[
+  {
+    "id": "Policy3.1",
+    "question": "What is your return policy?",
+    "answer": "Items can be returned within 30 days of purchase with original receipt. All items must be in original condition with tags attached. Refunds are processed within 5-7 business days.",
+    "category": "returns",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Policy3.2",
+    "question": "Can I exchange an item instead of returning it?",
+    "answer": "Yes, you can exchange items within 30 days of purchase. Exchanges are subject to availability and must be of equal or greater value. Original receipt required.",
+    "category": "returns",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Policy3.3",
+    "question": "What if my item is defective?",
+    "answer": "Defective items are covered under our warranty and can be returned or exchanged at any time. Please contact customer service for defective item returns.",
+    "category": "returns",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Shipping2.1",
+    "question": "What are your shipping options?",
+    "answer": "We offer Standard (5-7 days, $5.99), Express (2-3 days, $12.99), and Overnight ($24.99) shipping. Free shipping on orders over $50.",
+    "category": "shipping",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Shipping2.2",
+    "question": "How long does shipping take?",
+    "answer": "Standard shipping takes 5-7 business days, Express takes 2-3 business days, and Overnight shipping delivers the next business day.",
+    "category": "shipping",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Shipping2.3",
+    "question": "Do you ship internationally?",
+    "answer": "Yes, we ship to most countries. International shipping rates and delivery times vary by destination. Contact us for specific international shipping quotes.",
+    "category": "shipping",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Warranty4.1",
+    "question": "What is your warranty policy?",
+    "answer": "Most products come with a 1-year manufacturer warranty. Electronics have a 2-year warranty. Warranty covers manufacturing defects only.",
+    "category": "warranty",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Warranty4.2",
+    "question": "How do I claim warranty service?",
+    "answer": "Contact customer service with your order number and description of the issue. We'll provide return instructions and process your warranty claim.",
+    "category": "warranty",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Privacy5.1",
+    "question": "How do you protect my personal information?",
+    "answer": "We use industry-standard encryption and security measures to protect your data. We never sell your personal information to third parties.",
+    "category": "privacy",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Privacy5.2",
+    "question": "Can I delete my account and data?",
+    "answer": "Yes, you can request account deletion at any time. We'll remove your personal data within 30 days of your request, except where required by law.",
+    "category": "privacy",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Payment6.1",
+    "question": "What payment methods do you accept?",
+    "answer": "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay. All payments are processed securely.",
+    "category": "payment",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "Payment6.2",
+    "question": "Is my payment information secure?",
+    "answer": "Yes, we use SSL encryption and PCI-compliant payment processing. We never store your full payment information on our servers.",
+    "category": "payment",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "General7.1",
+    "question": "What are your business hours?",
+    "answer": "Our customer service is available Monday-Friday 9AM-6PM EST, and Saturday 10AM-4PM EST. Online orders can be placed 24/7.",
+    "category": "general",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "General7.2",
+    "question": "How can I contact customer service?",
+    "answer": "You can reach us by phone at 1-800-SHOPLITE, email at support@shoplite.com, or through our live chat feature on the website.",
+    "category": "general",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "General7.3",
+    "question": "Do you offer customer support?",
+    "answer": "Yes, we provide comprehensive customer support through phone, email, and live chat. Our support team is available to help with orders, products, and policies.",
+    "category": "general",
+    "lastUpdated": "2025-01-15T00:00:00Z"
+  }
+]

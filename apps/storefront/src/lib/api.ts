@@ -1,15 +1,15 @@
-import productsData from '../../public/mock-catalog.json';
-
-const products = productsData as Product[];
+// Real API client for Week 5 - connects to backend API
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
 export interface Product {
-  id: string;
-  title: string;
+  _id: string;
+  name: string;
+  description: string;
   price: number;
-  image: string;
+  category: string;
   tags: string[];
-  stockQty: number;
-  description?: string;
+  imageUrl: string;
+  stock: number;
 }
 
 export interface CartItem {
@@ -18,61 +18,140 @@ export interface CartItem {
 }
 
 export interface Order {
-  id: string;
-  status: 'Placed' | 'Packed' | 'Shipped' | 'Delivered';
-  items: CartItem[];
+  _id: string;
+  status: 'PENDING' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED';
+  items: Array<{
+    productId: string;
+    name: string;
+    price: number;
+    quantity: number;
+  }>;
   total: number;
   carrier?: string;
-  eta?: string;
+  estimatedDelivery?: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
-// Mock orders storage
-const mockOrders = new Map<string, Order>();
+export interface Customer {
+  _id: string;
+  name: string;
+  email: string;
+  phone: string;
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    country: string;
+  };
+}
 
-// Simulate API delay
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+// API response wrapper
+interface ApiResponse<T> {
+  success: boolean;
+  data?: T;
+  error?: string;
+  message?: string;
+}
+
+// Helper function to handle API calls
+async function apiCall<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+  const url = `${API_BASE_URL}${endpoint}`;
+  
+  const response = await fetch(url, {
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+    ...options,
+  });
+
+  if (!response.ok) {
+    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+  }
+
+  const result: ApiResponse<T> = await response.json();
+  
+  if (!result.success) {
+    throw new Error(result.error || 'API request failed');
+  }
+
+  return result.data as T;
+}
 
 export const api = {
-  listProducts: async (): Promise<Product[]> => {
-    await delay(200);
-    return Promise.resolve(products);
+  // Product endpoints
+  listProducts: async (search?: string, category?: string, sort?: string): Promise<Product[]> => {
+    const params = new URLSearchParams();
+    if (search) params.append('search', search);
+    if (category) params.append('category', category);
+    if (sort) params.append('sort', sort);
+    
+    const queryString = params.toString();
+    const endpoint = `/api/products${queryString ? `?${queryString}` : ''}`;
+    
+    return apiCall<Product[]>(endpoint);
   },
 
-  getProduct: async (id: string): Promise<Product | undefined> => {
-    await delay(100);
-    return Promise.resolve(products.find(p => p.id === id));
+  getProduct: async (id: string): Promise<Product> => {
+    return apiCall<Product>(`/api/products/${id}`);
   },
 
-  getOrderStatus: async (id: string): Promise<Order | undefined> => {
-    await delay(150);
-    const order = mockOrders.get(id);
-    
-    // Simulate order progression
-    if (order && order.status === 'Placed') {
-      // 30% chance to progress order status
-      if (Math.random() > 0.7) {
-        order.status = 'Packed';
-        order.carrier = 'FastShip';
-        order.eta = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-      }
-    }
-    
-    return Promise.resolve(order);
+  // Customer endpoints
+  getCustomerByEmail: async (email: string): Promise<Customer> => {
+    return apiCall<Customer>(`/api/customers?email=${encodeURIComponent(email)}`);
   },
 
-  placeOrder: async (items: CartItem[]): Promise<{ orderId: string }> => {
-    await delay(300);
-    const orderId = 'ORD' + Math.random().toString(36).substr(2, 9).toUpperCase();
-    const total = items.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
-    
-    const order: Order = {
-      id: orderId,
-      status: 'Placed',
-      items: [...items],
-      total
+  // Order endpoints
+  getOrderStatus: async (id: string): Promise<Order> => {
+    return apiCall<Order>(`/api/orders/${id}`);
+  },
+
+  placeOrder: async (customerId: string, items: CartItem[], shippingAddress?: any): Promise<{ orderId: string }> => {
+    const orderData = {
+      customerId,
+      items: items.map(item => ({
+        productId: item.product._id,
+        name: item.product.name,
+        price: item.product.price,
+        quantity: item.quantity
+      })),
+      shippingAddress
     };
-    
-    mockOrders.set(orderId, order);
-    return Promise.resolve({ orderId });
+
+    const order = await apiCall<Order>('/api/orders', {
+      method: 'POST',
+      body: JSON.stringify(orderData),
+    });
+
+    return { orderId: order._id };
+  },
+
+  // Analytics endpoints
+  getDailyRevenue: async (from: string, to: string) => {
+    return apiCall(`/api/analytics/daily-revenue?from=${from}&to=${to}`);
+  },
+
+  getDashboardMetrics: async () => {
+    return apiCall('/api/analytics/dashboard-metrics');
+  },
+
+  // Business metrics for admin dashboard
+  getBusinessMetrics: async () => {
+    return apiCall('/api/dashboard/business-metrics');
+  },
+
+  getPerformanceMetrics: async () => {
+    return apiCall('/api/dashboard/performance');
+  },
+
+  getAssistantStats: async () => {
+    return apiCall('/api/dashboard/assistant-stats');
+  },
+
+  // Health check
+  getHealth: async () => {
+    return apiCall('/api/dashboard/health');
   }
 };
