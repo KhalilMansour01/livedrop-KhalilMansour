@@ -61,7 +61,7 @@ interface AssistantStats {
   };
 }
 
-export const AdminDashboard: React.FC = () => {
+const AdminDashboard: React.FC = () => {
   const [businessMetrics, setBusinessMetrics] = useState<BusinessMetrics | null>(null);
   const [performanceMetrics, setPerformanceMetrics] = useState<PerformanceMetrics | null>(null);
   const [assistantStats, setAssistantStats] = useState<AssistantStats | null>(null);
@@ -83,9 +83,9 @@ export const AdminDashboard: React.FC = () => {
         api.getAssistantStats()
       ]);
 
-      setBusinessMetrics(business);
-      setPerformanceMetrics(performance);
-      setAssistantStats(assistant);
+      setBusinessMetrics(business as BusinessMetrics);
+      setPerformanceMetrics(performance as PerformanceMetrics);
+      setAssistantStats(assistant as AssistantStats);
     } catch (err) {
       setError('Failed to load dashboard data');
       console.error('Dashboard error:', err);
@@ -315,3 +315,5 @@ export const AdminDashboard: React.FC = () => {
     </div>
   );
 };
+
+export default AdminDashboard;

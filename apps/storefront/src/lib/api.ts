@@ -82,7 +82,7 @@ async function apiCall<T>(endpoint: string, options: RequestInit = {}): Promise<
 
 export const api = {
   // Product endpoints
-  listProducts: async (search?: string, category?: string, sort?: string): Promise<Product[]> => {
+  listProducts: async (search?: string, category?: string, sort?: string): Promise<any[]> => {
     const params = new URLSearchParams();
     if (search) params.append('search', search);
     if (category) params.append('category', category);
@@ -91,11 +91,33 @@ export const api = {
     const queryString = params.toString();
     const endpoint = `/api/products${queryString ? `?${queryString}` : ''}`;
     
-    return apiCall<Product[]>(endpoint);
+    const products = await apiCall<Product[]>(endpoint);
+    // Convert to old format for compatibility
+    return products.map(p => ({
+      id: p._id,
+      title: p.name,
+      image: p.imageUrl,
+      stockQty: p.stock,
+      description: p.description,
+      price: p.price,
+      category: p.category,
+      tags: p.tags
+    }));
   },
 
-  getProduct: async (id: string): Promise<Product> => {
-    return apiCall<Product>(`/api/products/${id}`);
+  getProduct: async (id: string): Promise<any> => {
+    const product = await apiCall<Product>(`/api/products/${id}`);
+    // Convert to old format for compatibility
+    return {
+      id: product._id,
+      title: product.name,
+      image: product.imageUrl,
+      stockQty: product.stock,
+      description: product.description,
+      price: product.price,
+      category: product.category,
+      tags: product.tags
+    };
   },
 
   // Customer endpoints
@@ -104,8 +126,27 @@ export const api = {
   },
 
   // Order endpoints
-  getOrderStatus: async (id: string): Promise<Order> => {
-    return apiCall<Order>(`/api/orders/${id}`);
+  getOrderStatus: async (id: string): Promise<any> => {
+    const order = await apiCall<Order>(`/api/orders/${id}`);
+    // Convert to old format for compatibility
+    return {
+      id: order._id,
+      status: order.status,
+      items: order.items.map(item => ({
+        product: {
+          id: item.productId,
+          name: item.name,
+          price: item.price,
+          image: '/images/default.jpg'
+        },
+        quantity: item.quantity
+      })),
+      total: order.total,
+      carrier: order.carrier,
+      eta: order.estimatedDelivery,
+      createdAt: order.createdAt,
+      updatedAt: order.updatedAt
+    };
   },
 
   placeOrder: async (customerId: string, items: CartItem[], shippingAddress?: any): Promise<{ orderId: string }> => {

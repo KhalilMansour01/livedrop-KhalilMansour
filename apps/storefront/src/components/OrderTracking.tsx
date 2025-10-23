@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { api, Order } from '../lib/api';
-import { sseClient, OrderStatusUpdate } from '../lib/sse-client';
+import { api, type Order } from '../lib/api';
+import { sseClient, type OrderStatusUpdate } from '../lib/sse-client';
 
 interface OrderTrackingProps {
   orderId: string;

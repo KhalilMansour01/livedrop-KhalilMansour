@@ -10,7 +10,9 @@ const Checkout: React.FC = () => {
   const { items, getTotal, clearCart } = useCartStore()
 
   const handlePlaceOrder = async () => {
-    const { orderId } = await api.placeOrder(items)
+    // For demo purposes, use demo customer ID
+    const customerId = 'demo-customer-id'; // This should come from user login
+    const { orderId } = await api.placeOrder(customerId, items)
     clearCart()
     navigate(`/order/${orderId}`)
   }
