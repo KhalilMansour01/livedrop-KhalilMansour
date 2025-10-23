@@ -171,17 +171,63 @@ function convertOrder(order: OrderSchema): Order {
 export const api = {
   // Product endpoints
   listProducts: async (search?: string, category?: string, sort?: string): Promise<Product[]> => {
-    const params = new URLSearchParams();
-    if (search) params.append('search', search);
-    if (category) params.append('category', category);
-    if (sort) params.append('sort', sort);
+  const params = new URLSearchParams();
+  if (search) params.append('search', search);
+  if (category) params.append('category', category);
+  if (sort) params.append('sort', sort);
+  
+  const queryString = params.toString();
+  const endpoint = `/api/products${queryString ? `?${queryString}` : ''}`;
+  
+  console.log('🔄 Fetching products from:', `${API_BASE_URL}${endpoint}`);
+  
+  try {
+    const response = await fetch(`${API_BASE_URL}${endpoint}`);
+    console.log('📡 Response status:', response.status);
     
-    const queryString = params.toString();
-    const endpoint = `/api/products${queryString ? `?${queryString}` : ''}`;
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
     
-    const products = await apiCall<ProductSchema[]>(endpoint);
-    return products.map(convertProduct);
-  },
+    const result = await response.json();
+    console.log('📦 Raw API response:', result);
+    
+    // Handle different response formats
+    let productsData;
+    if (result.success !== undefined) {
+      // Backend returns { success: true, data: [...] }
+      productsData = result.data;
+    } else if (Array.isArray(result)) {
+      // Backend returns direct array
+      productsData = result;
+    } else {
+      throw new Error(`Unexpected response format: ${JSON.stringify(result)}`);
+    }
+    
+    if (!Array.isArray(productsData)) {
+      throw new Error(`Products data is not an array: ${typeof productsData}`);
+    }
+    
+    // Convert to frontend format
+    const convertedProducts = productsData.map((p: any) => ({
+      _id: p._id || p.id,
+      title: p.name || p.title,
+      description: p.description,
+      price: p.price,
+      category: p.category,
+      tags: p.tags || [],
+      image: p.imageUrl || p.image,
+      stockQty: p.stock || p.stockQty
+    }));
+    
+    console.log('✅ Converted products:', convertedProducts);
+    return convertedProducts;
+    
+  } catch (error) {
+    console.error('❌ API call failed:', error);
+    throw error;
+  }
+},
 
   getProduct: async (id: string): Promise<Product> => {
     const product = await apiCall<ProductSchema>(`/api/products/${id}`);
