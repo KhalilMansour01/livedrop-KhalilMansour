@@ -1,4 +1,5 @@
 import express from "express";
+import mongoose from "mongoose";
 import Order from "../models/Order.js";
 import Customer from "../models/Customer.js";
 
@@ -74,6 +75,8 @@ router.post("/", async (req, res) => {
   try {
     const { customerId, items, shippingAddress } = req.body;
     
+    console.log('📦 Creating order for customer:', customerId);
+    
     // Validate required fields
     if (!customerId || !items || !items.length) {
       return res.status(400).json({
@@ -82,21 +85,50 @@ router.post("/", async (req, res) => {
       });
     }
 
-    // Validate customer exists
-    const customer = await Customer.findById(customerId);
+    let customer;
+    
+    // Handle customer lookup - support both ObjectId and email
+    if (mongoose.Types.ObjectId.isValid(customerId)) {
+      // It's a valid ObjectId - find by ID
+      customer = await Customer.findById(customerId);
+    } else {
+      // It's not a valid ObjectId - assume it's an email
+      customer = await Customer.findOne({ email: customerId });
+      
+      // If customer doesn't exist, create a new one
+      if (!customer) {
+        customer = new Customer({
+          name: 'Guest Customer',
+          email: customerId,
+          phone: '+0000000000',
+          address: shippingAddress || {
+            street: 'Unknown',
+            city: 'Unknown', 
+            state: 'Unknown',
+            zipCode: '00000',
+            country: 'US'
+          }
+        });
+        await customer.save();
+        console.log('✅ Created new customer:', customer.email);
+      }
+    }
+
     if (!customer) {
       return res.status(400).json({
         success: false,
-        error: "Customer not found"
+        error: "Customer not found and could not be created"
       });
     }
+
+    console.log('✅ Using customer:', customer.email);
 
     // Calculate total
     const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
     // Create new order
     const newOrder = new Order({
-      customerId,
+      customerId: customer._id, // Use the actual customer ObjectId
       items: items.map(item => ({
         productId: item.productId,
         name: item.name,
@@ -115,10 +147,13 @@ router.post("/", async (req, res) => {
       .populate('customerId', 'name email')
       .select('-__v');
 
+    console.log('✅ Order created successfully:', savedOrder._id);
+
     res.status(201).json({
       success: true,
       message: "Order created successfully",
-      data: populatedOrder
+      data: populatedOrder,
+      orderId: savedOrder._id
     });
 
   } catch (error) {
@@ -131,11 +166,17 @@ router.post("/", async (req, res) => {
       });
     }
 
+    if (error.name === 'CastError') {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid ID format: " + error.message
+      });
+    }
+
     res.status(500).json({
       success: false,
-      error: "Failed to create order"
+      error: "Failed to create order: " + error.message
     });
   }
 });
-
 export default router;

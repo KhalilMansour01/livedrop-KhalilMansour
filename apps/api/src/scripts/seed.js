@@ -161,7 +161,7 @@ const products = [
     price: 199.99,
     category: "electronics",
     tags: ["audio", "wireless", "bluetooth", "noise-cancelling"],
-    imageUrl: "/images/headphones.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop",
     stock: 25
   },
   {
@@ -170,7 +170,7 @@ const products = [
     price: 29.99,
     category: "clothing",
     tags: ["clothing", "organic", "cotton", "sustainable"],
-    imageUrl: "/images/tshirt.jpg", 
+    imageUrl: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop", 
     stock: 100
   },
   {
@@ -179,7 +179,7 @@ const products = [
     price: 34.99,
     category: "kitchen",
     tags: ["hydration", "eco-friendly", "insulated"],
-    imageUrl: "/images/bottle.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400&h=300&fit=crop",
     stock: 50
   },
   {
@@ -188,7 +188,7 @@ const products = [
     price: 299.99,
     category: "electronics",
     tags: ["fitness", "smartwatch", "health", "gps"],
-    imageUrl: "/images/smartwatch.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=400&h=300&fit=crop",
     stock: 30
   },
   {
@@ -197,7 +197,7 @@ const products = [
     price: 89.99,
     category: "clothing",
     tags: ["denim", "jeans", "casual", "sustainable"],
-    imageUrl: "/images/jeans.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=300&fit=crop",
     stock: 75
   },
   {
@@ -206,7 +206,7 @@ const products = [
     price: 19.99,
     category: "kitchen",
     tags: ["ceramic", "coffee", "mug", "handcrafted"],
-    imageUrl: "/images/mug.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop",
     stock: 60
   },
   {
@@ -215,7 +215,7 @@ const products = [
     price: 49.99,
     category: "electronics",
     tags: ["wireless", "charging", "qi", "fast-charge"],
-    imageUrl: "/images/charging-pad.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop",
     stock: 40
   },
   {
@@ -224,7 +224,7 @@ const products = [
     price: 59.99,
     category: "clothing",
     tags: ["hoodie", "fleece", "casual", "warm"],
-    imageUrl: "/images/hoodie.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop",
     stock: 45
   },
   {
@@ -233,7 +233,7 @@ const products = [
     price: 39.99,
     category: "kitchen",
     tags: ["bamboo", "cutting-board", "eco-friendly", "antimicrobial"],
-    imageUrl: "/images/cutting-board.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1556909114-4d0d853e5e25?w=400&h=300&fit=crop",
     stock: 35
   },
   {
@@ -242,7 +242,7 @@ const products = [
     price: 79.99,
     category: "electronics",
     tags: ["speaker", "bluetooth", "portable", "waterproof"],
-    imageUrl: "/images/speaker.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=300&fit=crop",
     stock: 55
   },
   {
@@ -251,7 +251,7 @@ const products = [
     price: 69.99,
     category: "accessories",
     tags: ["leather", "wallet", "rfid-blocking", "genuine"],
-    imageUrl: "/images/wallet.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&h=300&fit=crop",
     stock: 80
   },
   {
@@ -260,7 +260,7 @@ const products = [
     price: 44.99,
     category: "sports",
     tags: ["yoga", "mat", "non-slip", "fitness"],
-    imageUrl: "/images/yoga-mat.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop",
     stock: 65
   },
   {
@@ -269,7 +269,7 @@ const products = [
     price: 89.99,
     category: "electronics",
     tags: ["led", "lamp", "desk", "usb-charging"],
-    imageUrl: "/images/desk-lamp.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=300&fit=crop",
     stock: 25
   },
   {
@@ -278,7 +278,7 @@ const products = [
     price: 129.99,
     category: "sports",
     tags: ["running", "shoes", "lightweight", "breathable"],
-    imageUrl: "/images/running-shoes.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop",
     stock: 50
   },
   {
@@ -287,7 +287,7 @@ const products = [
     price: 54.99,
     category: "kitchen",
     tags: ["glass", "containers", "food-storage", "leak-proof"],
-    imageUrl: "/images/containers.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1556909114-4d0d853e5e25?w=400&h=300&fit=crop",
     stock: 40
   },
   {
@@ -296,7 +296,7 @@ const products = [
     price: 24.99,
     category: "accessories",
     tags: ["phone-case", "protective", "card-holder"],
-    imageUrl: "/images/phone-case.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=300&fit=crop",
     stock: 120
   },
   {
@@ -305,7 +305,7 @@ const products = [
     price: 39.99,
     category: "home",
     tags: ["diffuser", "essential-oils", "ultrasonic", "led"],
-    imageUrl: "/images/diffuser.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1603712610490-4c428fcd6f71?w=400&h=300&fit=crop",
     stock: 30
   },
   {
@@ -314,7 +314,7 @@ const products = [
     price: 19.99,
     category: "accessories",
     tags: ["canvas", "tote-bag", "eco-friendly", "shopping"],
-    imageUrl: "/images/tote-bag.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
     stock: 90
   },
   {
@@ -323,7 +323,7 @@ const products = [
     price: 29.99,
     category: "kitchen",
     tags: ["scale", "digital", "kitchen", "precision"],
-    imageUrl: "/images/scale.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1594736797933-d0d69c3d059d?w=400&h=300&fit=crop",
     stock: 35
   },
   {
@@ -332,7 +332,7 @@ const products = [
     price: 34.99,
     category: "sports",
     tags: ["resistance-bands", "workout", "fitness", "home-gym"],
-    imageUrl: "/images/resistance-bands.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
     stock: 60
   },
   {
@@ -341,7 +341,7 @@ const products = [
     price: 149.99,
     category: "electronics",
     tags: ["earbuds", "wireless", "noise-cancellation", "bluetooth"],
-    imageUrl: "/images/earbuds.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1590658165737-15a047b8b5e0?w=400&h=300&fit=crop",
     stock: 45
   },
   {
@@ -350,7 +350,7 @@ const products = [
     price: 49.99,
     category: "clothing",
     tags: ["scarf", "wool", "merino", "warm"],
-    imageUrl: "/images/scarf.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop",
     stock: 55
   },
   {
@@ -359,7 +359,7 @@ const products = [
     price: 39.99,
     category: "home",
     tags: ["candles", "soy-wax", "aromatherapy", "relaxing"],
-    imageUrl: "/images/candles.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
     stock: 40
   },
   {
@@ -368,7 +368,7 @@ const products = [
     price: 79.99,
     category: "accessories",
     tags: ["laptop-stand", "adjustable", "aluminum", "ergonomic"],
-    imageUrl: "/images/laptop-stand.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop",
     stock: 25
   },
   {
@@ -377,7 +377,7 @@ const products = [
     price: 14.99,
     category: "sports",
     tags: ["shaker-bottle", "protein", "bpa-free", "mixing-ball"],
-    imageUrl: "/images/shaker-bottle.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1594736797933-d0d69c3d059d?w=400&h=300&fit=crop",
     stock: 85
   },
   {
@@ -386,7 +386,7 @@ const products = [
     price: 39.99,
     category: "electronics",
     tags: ["mouse", "wireless", "ergonomic", "precision"],
-    imageUrl: "/images/mouse.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop",
     stock: 70
   },
   {
@@ -395,7 +395,7 @@ const products = [
     price: 69.99,
     category: "home",
     tags: ["bed-sheets", "cotton", "bedroom", "soft"],
-    imageUrl: "/images/bed-sheets.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
     stock: 50
   },
   {
@@ -404,7 +404,7 @@ const products = [
     price: 89.99,
     category: "accessories",
     tags: ["backpack", "travel", "laptop-compartment", "durable"],
-    imageUrl: "/images/backpack.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
     stock: 35
   },
   {
@@ -413,11 +413,10 @@ const products = [
     price: 24.99,
     category: "kitchen",
     tags: ["travel-mug", "insulated", "double-wall", "hot-cold"],
-    imageUrl: "/images/travel-mug.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=400&h=300&fit=crop",
     stock: 60
   }
 ];
-
 async function generateOrders(customers, products) {
   const orders = [];
   const statuses = ["PENDING", "PROCESSING", "SHIPPED", "DELIVERED"];

@@ -1,5 +1,7 @@
 // Real API client for Week 5 - connects to backend API
-const API_BASE_URL = (import.meta as any).env.VITE_API_URL || 'http://localhost:4000';
+const API_BASE_URL = 
+// (import.meta as any).env.VITE_API_URL || 
+'http://localhost:4000';
 
 // Backend Schema Types (from MongoDB)
 export interface ProductSchema {
@@ -240,9 +242,9 @@ export const api = {
     return convertOrder(order);
   },
 
-  placeOrder: async (customerId: string, items: CartItem[], shippingAddress?: any): Promise<{ orderId: string }> => {
+  placeOrder: async (customerEmail: string, items: CartItem[], shippingAddress?: any): Promise<{ orderId: string }> => {
     const orderData = {
-      customerId,
+      customerId: customerEmail,
       items: items.map(item => ({
         productId: item.product._id,
         name: item.product.title,

@@ -34,9 +34,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       </div>
       
       <div className="p-6">
-        <h3 className="font-bold text-lg mb-2 text-gray-800 line-clamp-2 leading-tight group-hover:text-purple-600 transition-colors">
+        {/* <h3 className="font-bold text-lg mb-2 text-gray-800 line-clamp-2 leading-tight group-hover:text-purple-600 transition-colors">
           {product.stockQty}
-        </h3>
+        </h3> */}
         <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
           {product.description}
         </p>
@@ -59,7 +59,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className="w-full py-3 font-bold rounded-2xl transition-all duration-300 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transform hover:scale-105 border-0"
           disabled={product.stockQty === 0}
         >
-          {product.stockQty === 0 ? 'Out of Stock' : 'Add to Cart ✨'}
+          {product.stockQty === 0 ? 'Out of Stock' : 'Add to Cart'}
         </Button>
       </div>
     </div>
