@@ -13,9 +13,15 @@ const OrderStatus: React.FC = () => {
   useEffect(() => {
     const loadOrder = async () => {
       if (id) {
-        const orderData = await api.getOrderStatus(id)
-        setOrder(orderData || null)
-        setLoading(false)
+        try {
+          const orderData = await api.getOrderStatus(id)
+          setOrder(orderData)
+        } catch (error) {
+          console.error('Failed to load order:', error)
+          setOrder(null)
+        } finally {
+          setLoading(false)
+        }
       }
     }
     loadOrder()
@@ -42,10 +48,10 @@ const OrderStatus: React.FC = () => {
   }
 
   const statusSteps = [
-    { key: 'Placed', label: 'Order Placed' },
-    { key: 'Packed', label: 'Packed' },
-    { key: 'Shipped', label: 'Shipped' },
-    { key: 'Delivered', label: 'Delivered' }
+    { key: 'PENDING', label: 'Order Placed' },
+    { key: 'PROCESSING', label: 'Processing' },
+    { key: 'SHIPPED', label: 'Shipped' },
+    { key: 'DELIVERED', label: 'Delivered' }
   ]
 
   const currentStepIndex = statusSteps.findIndex(step => step.key === order.status)
@@ -100,15 +106,15 @@ const OrderStatus: React.FC = () => {
             <div>
               <h2 className="text-xl font-semibold mb-4">Items</h2>
               <div className="space-y-3">
-                {order.items.map((item) => (
-                  <div key={item.product.id} className="flex items-center">
+                {order.items.map((item, index) => (
+                  <div key={index} className="flex items-center">
                     <img 
                       src={item.product.image} 
-                      alt={item.product.title}
+                      alt={item.product.name}
                       className="w-12 h-12 object-cover rounded"
                     />
                     <div className="ml-3">
-                      <p className="font-medium">{item.product.title}</p>
+                      <p className="font-medium">{item.product.name}</p>
                       <p className="text-gray-600 text-sm">
                         Qty: {item.quantity} × {formatCurrency(item.product.price)}
                       </p>
