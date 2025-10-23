@@ -28,7 +28,7 @@ export class SSEClient {
     onError?: (error: Event) => void,
     onComplete?: () => void
   ): SSEConnection {
-    const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+    const API_BASE_URL = (import.meta as any).env.VITE_API_URL || 'http://localhost:4000';
     const url = `${API_BASE_URL}/api/orders/${orderId}/stream`;
 
     const eventSource = new EventSource(url);

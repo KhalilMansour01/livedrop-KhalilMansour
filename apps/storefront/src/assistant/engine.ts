@@ -41,7 +41,7 @@ export class SupportEngine {
         const order = await api.getOrderStatus(orderId);
         if (order) {
           return {
-            answer: `Order ${formatOrderId(order.id)} is ${order.status.toLowerCase()}.${order.carrier ? ` Shipped via ${order.carrier} with ETA ${order.eta}.` : ''}`,
+            answer: `Order ${formatOrderId(order._id)} is ${order.status.toLowerCase()}.${order.carrier ? ` Shipped via ${order.carrier} with ETA ${order.eta}.` : ''}`,
             confidence: 1.0
           };
         } else {

@@ -164,10 +164,10 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({ orderId, onClose }
             {order.items.map((item, index) => (
               <div key={index} className="flex justify-between items-center py-2 border-b">
                 <div>
-                  <p className="font-medium">{item.name}</p>
+                  <p className="font-medium">{item.product.name}</p>
                   <p className="text-sm text-gray-600">Qty: {item.quantity}</p>
                 </div>
-                <p className="font-semibold">${(item.price * item.quantity).toFixed(2)}</p>
+                <p className="font-semibold">${(item.product.price * item.quantity).toFixed(2)}</p>
               </div>
             ))}
           </div>
@@ -179,8 +179,8 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({ orderId, onClose }
             <h3 className="text-lg font-semibold mb-3">Shipping Information</h3>
             <div className="bg-blue-50 rounded-lg p-4">
               <p><span className="font-medium">Carrier:</span> {order.carrier}</p>
-              {order.estimatedDelivery && (
-                <p><span className="font-medium">Estimated Delivery:</span> {new Date(order.estimatedDelivery).toLocaleDateString()}</p>
+              {order.eta && (
+                <p><span className="font-medium">Estimated Delivery:</span> {new Date(order.eta).toLocaleDateString()}</p>
               )}
             </div>
           </div>

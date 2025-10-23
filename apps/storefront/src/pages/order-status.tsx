@@ -65,7 +65,7 @@ const OrderStatus: React.FC = () => {
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="bg-green-50 px-6 py-4 border-b">
           <h1 className="text-2xl font-bold text-gray-900">Order Confirmed!</h1>
-          <p className="text-gray-600">Order ID: {formatOrderId(order.id)}</p>
+          <p className="text-gray-600">Order ID: {formatOrderId(order._id)}</p>
         </div>
 
         <div className="p-6">

@@ -23,7 +23,7 @@ const ProductPage: React.FC = () => {
           // Load related products (same tags)
           const allProducts = await api.listProducts()
           const related = allProducts
-            .filter(p => p.id !== id && p.tags.some(tag => productData.tags.includes(tag)))
+            .filter(p => p._id !== id && p.tags.some(tag => productData.tags.includes(tag)))
             .slice(0, 3)
           setRelatedProducts(related)
         }
@@ -99,7 +99,7 @@ const ProductPage: React.FC = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedProducts.map(relatedProduct => (
-              <ProductCard key={relatedProduct.id} product={relatedProduct} />
+              <ProductCard key={relatedProduct._id} product={relatedProduct} />
             ))}
           </div>
         </div>

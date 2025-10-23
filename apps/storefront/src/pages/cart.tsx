@@ -30,7 +30,7 @@ const Cart: React.FC = () => {
 
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         {items.map((item) => (
-          <div key={item.product.id} className="border-b last:border-b-0">
+          <div key={item.product._id} className="border-b last:border-b-0">
             <div className="p-6 flex items-center">
               <img 
                 src={item.product.image} 
@@ -47,7 +47,7 @@ const Cart: React.FC = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+                  onClick={() => updateQuantity(item.product._id, item.quantity - 1)}
                 >
                   -
                 </Button>
@@ -57,7 +57,7 @@ const Cart: React.FC = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                  onClick={() => updateQuantity(item.product._id, item.quantity + 1)}
                   disabled={item.quantity >= item.product.stockQty}
                 >
                   +
@@ -66,7 +66,7 @@ const Cart: React.FC = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => removeItem(item.product.id)}
+                  onClick={() => removeItem(item.product._id)}
                   className="ml-4 text-red-600 border-red-300 hover:bg-red-50"
                 >
                   Remove

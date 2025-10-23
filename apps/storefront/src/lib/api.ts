@@ -1,5 +1,5 @@
 // Real API client for Week 5 - connects to backend API
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const API_BASE_URL = (import.meta as any).env.VITE_API_URL || 'http://localhost:4000';
 
 // Backend Schema Types (from MongoDB)
 export interface ProductSchema {
@@ -29,9 +29,25 @@ export interface OrderSchema {
   updatedAt: string;
 }
 
+export interface CustomerSchema {
+  _id: string;
+  name: string;
+  email: string;
+  phone: string;
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    country: string;
+  };
+  createdAt: string;
+  updatedAt: string;
+}
+
 // Frontend Compatible Types (what your components expect)
 export interface Product {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   price: number;
@@ -42,7 +58,7 @@ export interface Product {
 }
 
 export interface Order {
-  id: string;
+  _id: string;
   status: 'PENDING' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED';
   items: Array<{
     product: {
@@ -59,6 +75,22 @@ export interface Order {
   eta?: string;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface Customer {
+  _id: string;
+  name: string;
+  email: string;
+  phone: string;
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    country: string;
+  };
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface CartItem {
@@ -102,7 +134,7 @@ async function apiCall<T>(endpoint: string, options: RequestInit = {}): Promise<
 // Convert backend product to frontend format
 function convertProduct(product: ProductSchema): Product {
   return {
-    id: product._id,
+    _id: product._id,
     title: product.name,
     description: product.description,
     price: product.price,
@@ -116,7 +148,7 @@ function convertProduct(product: ProductSchema): Product {
 // Convert backend order to frontend format  
 function convertOrder(order: OrderSchema): Order {
   return {
-    id: order._id,
+    _id: order._id,
     status: order.status,
     items: order.items.map(item => ({
       product: {
@@ -166,7 +198,7 @@ export const api = {
     const orderData = {
       customerId,
       items: items.map(item => ({
-        productId: item.product.id,
+        productId: item.product._id,
         name: item.product.title,
         price: item.product.price,
         quantity: item.quantity
@@ -184,8 +216,17 @@ export const api = {
   },
 
   // Customer endpoints
-  getCustomerByEmail: async (email: string) => {
-    return apiCall(`/api/customers?email=${encodeURIComponent(email)}`);
+  getCustomerByEmail: async (email: string): Promise<Customer> => {
+    const customer = await apiCall<CustomerSchema>(`/api/customers?email=${encodeURIComponent(email)}`);
+    return {
+      _id: customer._id,
+      name: customer.name,
+      email: customer.email,
+      phone: customer.phone,
+      address: customer.address,
+      createdAt: customer.createdAt,
+      updatedAt: customer.updatedAt
+    };
   },
 
   // Analytics endpoints

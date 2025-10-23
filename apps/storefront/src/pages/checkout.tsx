@@ -30,7 +30,7 @@ const Checkout: React.FC = () => {
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
             <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
             {items.map((item) => (
-              <div key={item.product.id} className="flex justify-between items-center py-3 border-b">
+              <div key={item.product._id} className="flex justify-between items-center py-3 border-b">
                 <div>
                   <h3 className="font-medium">{item.product.title}</h3>
                   <p className="text-gray-600 text-sm">Qty: {item.quantity}</p>
